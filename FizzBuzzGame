@@ -1,0 +1,8 @@
+print "This is the fizz buzz game \n each number that is divisible by 3 becomes fizz \n each number that is divisible by 5 becomes buzz \n and each number divisible by 3 & 5 becomes fizz buzz \n now print out from 1 to 100. \n"
+(1..100).each do |n|
+a = String.new
+a << "Fizz" if n%3 == 0
+a << "Buzz" if n%5 == 0
+a << n.to_s if a.empty?
+puts a
+end
