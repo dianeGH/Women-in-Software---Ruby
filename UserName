@@ -1,0 +1,13 @@
+firstName = ""
+surname = ""
+
+
+print "What is your first name? "
+firstName= gets
+firstName = firstName.chomp
+
+print "What is your surname? "
+surname = gets
+surname = surname.chomp
+
+puts "Your name is #{surname}, #{firstName}"
