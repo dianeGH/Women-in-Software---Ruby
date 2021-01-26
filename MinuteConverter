@@ -1,0 +1,19 @@
+print "How many minutes would you like to convert?"
+Minutes = gets
+Minutestc = Minutes.to_i
+
+def time_conversion(minutes)
+    hours = minutes / 60
+    rest = minutes % 60
+    if(hours>1) then
+      puts "#{hours} hours " 
+    else 
+      puts "#{hours} hour "
+    end
+    if(rest>1) then
+      puts "and #{rest} minutes"
+    else
+      puts "and #{rest} minute"
+    end
+end
+time_conversion(Minutestc)
