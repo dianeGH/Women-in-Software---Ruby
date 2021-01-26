@@ -1,0 +1,112 @@
+print "Let figure out what day you were born on...\n"
+print "Enter your date of birth as DDMMYYYY:\n"
+DOB = gets
+
+DOBSplit = DOB.split('')
+
+DD = DOBSplit[0] + DOBSplit[1]
+MM = DOBSplit[2] + DOBSplit[3]
+YYYY = DOBSplit[4] + DOBSplit[5] + DOBSplit[6] + DOBSplit[7]
+
+#variables as Integer
+DDI = DD.to_i 
+MMI = MM.to_i 
+YYYYI = YYYY.to_i
+
+#variables as Float
+DDF = DD.to_f 
+MMF = MM.to_f
+YYYYF = YYYY.to_f 
+
+#month & year for jan & feb
+MMF2 = MMF+12
+YYYY2 = YYYYF-1
+
+#determine YF & YL value
+if (MMI < 3) then
+  YF1 = YYYY2.to_s 
+  YF2 = YF1[0] + YF1[1]
+  YF = YF2.to_f
+  YL2 = YF1[2] + YF1[3]
+  YL = YL2.to_f 
+  M1 = MMF2
+  Check1 = 2.6*M1-5.39
+  M11 = Check1.round()
+  Check2 = YF*4 
+  Check3 = YL*4 
+  Check4 = DDF + YL
+  Check5 = YF*2 
+
+  DOBCheck = M11+Check2+Check3+Check4-Check5/7
+  DOBCheck1 = DOBCheck.to_i
+  DOBCheck2 = DOBCheck-DOBCheck1
+  DOBRound = DOBCheck2.round(1) * 10
+  
+  #return day of birth
+  if (DOBRound == 0)then
+    puts "#{DD}/#{MM}/#{YYYY} was a Sunday\n The child born on the sabbath day\n is bonny and blithe and good and gay."
+    end 
+  if (DOBRound == 1) then
+    puts "#{DD}/#{MM}/#{YYYY} was a Monday\n Monday's child is fair of face."
+  end
+  if (DOBRound == 2) then
+    puts "#{DD}/#{MM}/#{YYYY} was a Tuesday\n Tuesday's child is full of grace."
+  end
+  if (DOBRound == 3) then
+    puts "#{DD}/#{MM}/#{YYYY} was a Wednesday\n Wednesday's child is full of woe."
+  end 
+  if (DOBRound == 4) then
+    puts "#{DD}/#{MM}/#{YYYY} was a Thursday\n Thursday's child has far to go."
+  end
+  if (DOBRound == 5) then
+    puts "#{DD}/#{MM}/#{YYYY} was a Friday\n Friday's child is loving and giving."
+  end
+  if (DOBRound == 6)
+    puts "#{DD}/#{MM}/#{YYYY} was a Saturday\n Saturday's child works hard for a living."
+  end
+else
+  YF1 = DOBSplit[4] + DOBSplit[5]
+  YF = YF1.to_f
+  YL1 = DOBSplit[6] + DOBSplit[7]
+  YL = YL1.to_f
+  M1 = MMF
+  Check1 = 2.6*M1-5.39
+  M11 = Check1.round()
+  Check2 = YF*4 
+  Check3 = YL*4 
+  Check4 = DDF + YL
+  Check5 = YF*2 
+  
+  DOBCheck = ((M11+Check2+Check3+DDF+YL)-Check5)/7
+  DOBCheck1 = DOBCheck.to_i
+  DOBCheck2 = DOBCheck-DOBCheck1
+  DOBRound1 = DOBCheck2.round(1) * 10
+  puts DOBRound1
+  DOBRound = DOBRound1.to_i
+  puts DOBRound
+  
+#return day of birth
+  if (DOBRound == 0)then
+    puts "#{DD}/#{MM}/#{YYYY} was a Sunday\n The child born on the sabbath day\n is bonny and blithe and good and gay."
+    end 
+  if (DOBRound == 1) then
+    puts "#{DD}/#{MM}/#{YYYY} was a Monday\n Monday's child is fair of face."
+  end
+  if (DOBRound == 2) then
+    puts "#{DD}/#{MM}/#{YYYY} was a Tuesday\n Tuesday's child is full of grace."
+  end
+  if (DOBRound == 3) then
+    puts "#{DD}/#{MM}/#{YYYY} was a Wednesday\n Wednesday's child is full of woe."
+  end 
+  if (DOBRound == 4) then
+    puts "#{DD}/#{MM}/#{YYYY} was a Thursday\n Thursday's child has far to go."
+  end
+  if (DOBRound == 5) then
+    puts "#{DD}/#{MM}/#{YYYY} was a Friday\n Friday's child is loving and giving."
+  end
+  if (DOBRound == 6)
+    puts "#{DD}/#{MM}/#{YYYY} was a Saturday\n Saturday's child works hard for a living."
+  end
+end
+
+
