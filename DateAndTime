@@ -1,0 +1,9 @@
+# time and date
+
+date = Time.now
+time = Time.now
+
+date = date.day.to_s + "/" + date.month.to_s + "/" + date.year.to_s
+time = time.hour.to_s + ":" + time.min.to_s
+
+puts "The date is " + date + " and it is " + time
