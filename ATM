@@ -1,0 +1,15 @@
+BankBalance = 500
+print "How much would you like to withdraw? \n"
+Withdraw1 = gets
+Withdraw = Withdraw1.to_f
+
+if (Withdraw >= 0)then
+  if (Withdraw<BankBalance)then
+    NewBalance = BankBalance-Withdraw
+    puts "Your new balance is #{NewBalance}."
+  else
+    puts "You can not withdraw more funds than are available."
+  end
+else
+  puts "You can not withdraw less than £0"
+end
